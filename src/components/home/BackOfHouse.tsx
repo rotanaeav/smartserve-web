@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { UtensilsCrossed } from 'lucide-react';
 import { backOfHouseFeatures, kitchenAlerts } from '@/mocks/home.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -13,6 +14,7 @@ const fadeIn = {
 };
 
 export default function BackOfHouse() {
+  const { t } = useTranslation();
   return (
     <section className="py-28 lg:py-32 bg-[#FAFAFA] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -34,19 +36,19 @@ export default function BackOfHouse() {
                   className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
                 >
                   <div className={`w-2 h-2 rounded-full ${alert.colorClass} ml-1 ${alert.ping ? 'animate-ping' : ''}`} />
-                  <span className="font-bold text-[#3E2B20] text-sm">{alert.title} • {alert.status}</span>
+                  <span className="font-bold text-[#3E2B20] text-sm">{t(alert.title)} • {t(alert.status)}</span>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
           <motion.div {...fadeIn} className="flex-1 lg:pl-8">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-[#E08600]/10 text-[#E08600] font-bold text-xs tracking-widest uppercase mb-6 border border-[#E08600]/20 shadow-sm">Back of House</span>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-[#E08600]/10 text-[#E08600] font-bold text-xs tracking-widest uppercase mb-6 border border-[#E08600]/20 shadow-sm">{t("home.backOfHouse.badge")}</span>
             <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
-              Keep your kitchen in perfect sync
+              {t("home.backOfHouse.title")}
             </h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
-              Keep your kitchen firing on all cylinders with tools that eliminate miscommunication and reduce wait times.
+              {t("home.backOfHouse.description")}
             </p>
 
             <div className="space-y-4">
@@ -57,8 +59,8 @@ export default function BackOfHouse() {
                     <UtensilsCrossed size={20} className="relative z-10 group-hover:scale-110 group-hover:text-[#E08600] transition-all duration-500 ease-out" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#E08600] transition-colors duration-300">{item.title}</h4>
-                    <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
+                    <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#E08600] transition-colors duration-300">{t(item.title)}</h4>
+                    <p className="text-gray-600 text-base leading-relaxed">{t(item.desc)}</p>
                   </div>
                 </div>
               ))}

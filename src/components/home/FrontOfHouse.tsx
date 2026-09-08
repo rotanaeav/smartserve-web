@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Zap } from 'lucide-react';
 import { frontOfHouseFeatures } from '@/mocks/home.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -13,17 +14,18 @@ const fadeIn = {
 };
 
 export default function FrontOfHouse() {
+  const { t } = useTranslation();
   return (
     <section className="py-28 lg:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-16">
           <motion.div {...fadeIn} className="flex-1 lg:pr-8">
-            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-6 border border-orange-200 shadow-sm">Front of House</span>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-6 border border-orange-200 shadow-sm">{t("home.frontOfHouse.badge")}</span>
             <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
-              Run your front of house like clockwork
+              {t("home.frontOfHouse.title")}
             </h2>
             <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
-              Deliver a flawless guest experience with intuitive tools designed for hospitality professionals.
+              {t("home.frontOfHouse.description")}
             </p>
 
             <div className="space-y-4">
@@ -34,8 +36,8 @@ export default function FrontOfHouse() {
                     <CheckCircle2 size={20} className="relative z-10 group-hover:scale-110 transition-transform duration-500 ease-out" />
                   </div>
                   <div>
-                    <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#8A4A1C] transition-colors duration-300">{item.title}</h4>
-                    <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
+                    <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#8A4A1C] transition-colors duration-300">{t(item.title)}</h4>
+                    <p className="text-gray-600 text-base leading-relaxed">{t(item.desc)}</p>
                   </div>
                 </div>
               ))}
@@ -60,8 +62,8 @@ export default function FrontOfHouse() {
                   <Zap className="text-[#2E7D32]" size={18} />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Table 12 • Paid</p>
-                  <p className="text-[#3E2B20] font-black text-base">$142.50 Received</p>
+                  <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">{t("home.frontOfHouse.tableStatus")}</p>
+                  <p className="text-[#3E2B20] font-black text-base">{t("home.frontOfHouse.paymentReceived")}</p>
                 </div>
               </div>
             </motion.div>

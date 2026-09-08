@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Zap, ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -12,46 +13,47 @@ const fadeIn = {
 };
 
 export default function FaqContact() {
+  const { t } = useTranslation();
   return (
     <section id="contact" className="py-24 bg-white border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="text-center mb-14">
           <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-xs tracking-wider uppercase mb-4">
-            Get In Touch
+            {t("faq.contact.badge")}
           </span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Still have questions?</h2>
-          <p className="text-gray-500 text-lg max-w-lg mx-auto">Our team responds within 24 hours. We're here to help you succeed.</p>
+          <h2 className="text-4xl font-extrabold text-gray-900 mb-3">{t("faq.contact.title")}</h2>
+          <p className="text-gray-500 text-lg max-w-lg mx-auto">{t("faq.contact.description")}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
           {/* Form — takes 3 cols */}
           <motion.div {...fadeIn} className="lg:col-span-3 bg-white rounded-3xl border border-gray-200 p-8">
-            <h3 className="text-xl font-extrabold text-gray-900 mb-7">Send us a message</h3>
+            <h3 className="text-xl font-extrabold text-gray-900 mb-7">{t("faq.contact.form.title")}</h3>
             <form className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Your Name</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder="John Doe" />
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">{t("faq.contact.form.name")}</label>
+                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder={t("faq.contact.form.placeholder_name")} />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-1.5">Restaurant Name</label>
-                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder="The Great Cafe" />
+                  <label className="block text-sm font-bold text-gray-700 mb-1.5">{t("faq.contact.form.restaurant")}</label>
+                  <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder={t("faq.contact.form.placeholder_restaurant")} />
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1.5">Email Address</label>
-                <input type="email" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder="john@example.com" />
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">{t("faq.contact.form.email")}</label>
+                <input type="email" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder={t("faq.contact.form.placeholder_email")} />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1.5">Phone Number</label>
-                <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder="+855 12 345 678" />
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">{t("faq.contact.form.phone")}</label>
+                <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all" placeholder={t("faq.contact.form.placeholder_phone")} />
               </div>
               <div>
-                <label className="block text-sm font-bold text-gray-700 mb-1.5">Message</label>
-                <textarea rows={4} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all resize-none" placeholder="Tell us about your restaurant..." />
+                <label className="block text-sm font-bold text-gray-700 mb-1.5">{t("faq.contact.form.message")}</label>
+                <textarea rows={4} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-base/30 focus:border-brand-base focus:bg-white transition-all resize-none" placeholder={t("faq.contact.form.placeholder_message")} />
               </div>
               <button type="button" className="w-full bg-brand-base text-white font-bold text-base py-4 rounded-xl hover:bg-brand-secondary transition-all shadow-lg shadow-brand-base/20 hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                Send Message <ArrowRight size={18} />
+                {t("faq.contact.form.submit")} <ArrowRight size={18} />
               </button>
             </form>
           </motion.div>
@@ -69,9 +71,9 @@ export default function FaqContact() {
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">{item.label}</p>
-                  <p className="font-semibold text-gray-900 text-sm">{item.value}</p>
-                  {item.sub && <p className="text-xs text-gray-400 mt-0.5">{item.sub}</p>}
+                  <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">{t(item.label)}</p>
+                  <p className="font-semibold text-gray-900 text-sm">{t(item.value)}</p>
+                  {item.sub && <p className="text-xs text-gray-400 mt-0.5">{t(item.sub)}</p>}
                 </div>
               </motion.div>
             ))}
@@ -82,8 +84,8 @@ export default function FaqContact() {
                 <Zap size={20} className="text-white" />
               </div>
               <div>
-                <p className="text-white font-extrabold text-sm">Fast Response</p>
-                <p className="text-white/60 text-xs mt-0.5">Average reply under 2 hours</p>
+                <p className="text-white font-extrabold text-sm">{t("faq.contact.fast_response.title")}</p>
+                <p className="text-white/60 text-xs mt-0.5">{t("faq.contact.fast_response.description")}</p>
               </div>
             </div>
           </motion.div>

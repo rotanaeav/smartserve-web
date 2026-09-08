@@ -1,3 +1,224 @@
 {
-  "hello": "សួស្តី"
+  "1": "១",
+  "Home": "ទំព័រដើម",
+  "About": "អំពីយើង",
+  "FAQs": "សំណួរញឹកញាប់",
+  "Book Demo": "កក់ការបង្ហាញ",
+  "home": {
+    "hero": {
+      "title_part1": "ដំណើរការភោជនីយដ្ឋាន",
+      "title_part2": "កាន់តែឆ្លាតវៃ",
+      "description": "SmartServe គឺជាប្រព័ន្ធគ្រប់គ្រងភោជនីយដ្ឋានទំនើប។ ជំនួសកម្មវិធី ៤ ជាមួយនឹងប្រព័ន្ធតែមួយ។",
+      "bookDemo": "កក់ការបង្ហាញដោយឥតគិតថ្លៃ",
+      "todaysSales": "ការលក់ថ្ងៃនេះ",
+      "tablesOccupied": "តុដែលមានភ្ញៀវ"
+    },
+    "frontOfHouse": {
+      "badge": "ផ្នែកខាងមុខ",
+      "title": "ដំណើរការផ្នែកខាងមុខដោយរលូន",
+      "description": "ផ្តល់បទពិសោធន៍ដ៏ល្អឥតខ្ចោះដល់ភ្ញៀវជាមួយនឹងឧបករណ៍ដ៏ទំនើប។",
+      "tableStatus": "តុ 12 • បានទូទាត់",
+      "paymentReceived": "$142.50 បានទទួល"
+    },
+    "backOfHouse": {
+      "badge": "ផ្នែកផ្ទះបាយ",
+      "title": "រក្សាផ្ទះបាយរបស់អ្នកឲ្យដំណើរការល្អ",
+      "description": "កាត់បន្ថយការយល់ច្រឡំ និងកាត់បន្ថយពេលវេលារង់ចាំ។"
+    },
+    "bento": {
+      "badge": "ប្រព័ន្ធគ្រប់គ្រង",
+      "title_part1": "អ្វីគ្រប់យ៉ាងដែលអ្នកត្រូវការ",
+      "title_part2": "សម្រាប់ដំណើរការហាង",
+      "table12": "តុ 12"
+    },
+    "cta": {
+      "title": "ត្រៀមខ្លួនរួចរាល់ឬនៅ?",
+      "description": "ចូលរួមជាមួយភោជនីយដ្ឋានទំនើបៗ។ ចាប់ផ្តើមថ្ងៃនេះ។",
+      "bookDemo": "កក់ការបង្ហាញ",
+      "learnMore": "ស្វែងយល់បន្ថែម"
+    },
+    "partners": {
+      "badge": "ដៃគូរបស់យើង",
+      "title": "ជឿទុកចិត្តដោយភោជនីយដ្ឋានល្បីៗ។"
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "រឿងរ៉ាវរបស់យើង",
+      "title_part1": "ផ្តល់សិទ្ធិអំណាចដល់",
+      "title_part2": "ភោជនីយដ្ឋានដើម្បីភាពជោគជ័យ។",
+      "description": "យើងបង្កើត SmartServe ឡើងដោយសារតែយើងធ្លាប់ឆ្លងកាត់ការលំបាកក្នុងការគ្រប់គ្រងភោជនីយដ្ឋាន។"
+    },
+    "mission": {
+      "badge": "បេសកកម្មរបស់យើង",
+      "title_part1": "បង្កើតដោយអ្នកភោជនីយដ្ឋាន,",
+      "title_part2": "សម្រាប់អ្នកភោជនីយដ្ឋាន។",
+      "description": "យើងបង្កើត SmartServe នៅពេលកំពុងបម្រើសេវាកម្ម។"
+    },
+    "team": {
+      "badge": "បុគ្គលិក",
+      "title": "ជួបជាមួយក្រុមការងារ",
+      "description": "ក្រុមការងារតូចតែមានសមត្ថភាព។"
+    },
+    "values": {
+      "badge": "អ្វីដែលជំរុញយើង",
+      "title": "គុណតម្លៃស្នូលរបស់យើង"
+    },
+    "timeline": {
+      "badge": "ប្រវត្តិរបស់យើង",
+      "title": "ដំណើររបស់យើង"
+    },
+    "cta": {
+      "badge": "ចូលរួមជាមួយយើង",
+      "title": "ចង់ក្លាយជាផ្នែកមួយនៃយើង?",
+      "description": "ទោះជាអ្នកមានហាងកាហ្វេតូច ឬសណ្ឋាគារធំ យើងមានគម្រោងសាកសមសម្រាប់អ្នក។",
+      "getInTouch": "ទំនាក់ទំនងយើង",
+      "seePlatform": "មើលប្រព័ន្ធគ្រប់គ្រង"
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "មជ្ឈមណ្ឌលគាំទ្រ",
+      "title_part1": "តើយើងអាច",
+      "title_part2": "ជួយអ្នកយ៉ាងដូចម្តេច?",
+      "description": "រកមើលសំណួរទូទៅខាងក្រោម ឬទំនាក់ទំនងមកយើង។"
+    },
+    "contact": {
+      "badge": "ទំនាក់ទំនង",
+      "title": "នៅតែមានសំណួរ?",
+      "description": "ក្រុមការងារយើងនឹងឆ្លើយតបក្នុងរយៈពេល ២៤ ម៉ោង។",
+      "form": {
+        "title": "ផ្ញើសារមកយើង",
+        "name": "ឈ្មោះរបស់អ្នក",
+        "placeholder_name": "មករា",
+        "restaurant": "ឈ្មោះភោជនីយដ្ឋាន",
+        "placeholder_restaurant": "កាហ្វេភ្នំពេញ",
+        "email": "អ៊ីមែល",
+        "placeholder_email": "makara@example.com",
+        "phone": "លេខទូរស័ព្ទ",
+        "placeholder_phone": "+855 12 345 678",
+        "message": "សារ",
+        "placeholder_message": "ប្រាប់យើងពីភោជនីយដ្ឋានរបស់អ្នក...",
+        "submit": "ផ្ញើសារ"
+      },
+      "fast_response": {
+        "title": "ការឆ្លើយតបរហ័ស",
+        "description": "ឆ្លើយតបជាមធ្យមក្រោម ២ ម៉ោង"
+      }
+    }
+  },
+  "footer": {
+    "description": "ប្រព័ន្ធគ្រប់គ្រងតែមួយដែលបង្កើតឡើងសម្រាប់ភោជនីយដ្ឋានទំនើប។",
+    "quick_links": {
+      "title": "តំណភ្ជាប់រហ័ស",
+      "features": "លក្ខណៈពិសេស",
+      "services": "សេវាកម្មរបស់យើង",
+      "about": "អំពីក្រុមហ៊ុន",
+      "faq": "សំណួរ និងការគាំទ្រ"
+    },
+    "contact_us": {
+      "title": "ទំនាក់ទំនងយើង",
+      "address": "១២៣ វិថីនវានុវត្តន៍,<br/>តំបន់បច្ចេកវិទ្យា, ទីក្រុង ១២៣៤៥",
+      "phone": "+855 12 345 678",
+      "email": "hello@smartserve.co"
+    },
+    "copyright": {
+      "rights_reserved": "រក្សាសិទ្ធិគ្រប់យ៉ាង។",
+      "privacy_policy": "គោលការណ៍ឯកជនភាព",
+      "terms_of_service": "លក្ខខណ្ឌប្រើប្រាស់"
+    }
+  },
+  "Smart POS": "ប្រព័ន្ធលក់ (POS)",
+  "Lightning-fast point of sale for walk-ins, table service, and takeaways.": "ប្រព័ន្ធលក់រហ័សទាន់ចិត្តសម្រាប់ការដើរចូល បម្រើដល់តុ និងខ្ចប់។",
+  "QR Ordering": "ការបញ្ជាទិញតាម QR",
+  "Guests can scan, order, and pay directly from their phones.": "ភ្ញៀវអាចស្កេន បញ្ជាទិញ និងបង់ប្រាក់ដោយផ្ទាល់ពីទូរស័ព្ទរបស់ពួកគេ។",
+  "Table Booking": "ការកក់តុ",
+  "Interactive floor map for guests to book their perfect table in advance.": "ផែនទីអន្តរកម្មសម្រាប់ភ្ញៀវកក់តុទុកមុន។",
+  "Kitchen Display": "អេក្រង់ផ្ទះបាយ",
+  "Digital display that instantly routes orders to the correct kitchen station.": "អេក្រង់ឌីជីថលដែលបញ្ជូនការបញ្ជាទិញទៅកន្លែងផ្ទះបាយត្រឹមត្រូវភ្លាមៗ។",
+  "Floor map reservations": "ការកក់ទុកតាមផែនទី",
+  "Guests see a real-time visualization of your restaurant.": "ភ្ញៀវមើលឃើញផែនទីភោជនីយដ្ឋានរបស់អ្នកផ្ទាល់។",
+  "QR self-ordering": "ការបញ្ជាទិញដោយខ្លួនឯង",
+  "No apps, no downloads. Just scan and order in seconds.": "មិនចាំបាច់មានកម្មវិធីទេ។ គ្រាន់តែស្កេន ហើយបញ្ជាទិញភ្លាមៗ។",
+  "Live table tracking": "តាមដានតុជាក់ស្តែង",
+  "Always know the status of every table from a single screen.": "ដឹងពីស្ថានភាពរបស់តុនីមួយៗជានិច្ច ពីអេក្រង់តែមួយ។",
+  "Digital KDS": "ប្រព័ន្ធបញ្ជាផ្ទះបាយ",
+  "Priority color-coding and automatic station routing.": "កូដពណ៌អាទិភាព និងការបញ្ជូនស្ថានីយ៍ស្វ័យប្រវត្តិ។",
+  "Ticket time tracking": "ការតាមដានពេលវេលា",
+  "Get alerts before orders exceed their target time.": "ទទួលបានការជូនដំណឹងមុនពេលការបញ្ជាទិញលើសម៉ោង។",
+  "Real-time sync": "ការធ្វើសមកាលកម្មជាក់ស្តែង",
+  "Waitstaff see exactly when a dish is ready to be run.": "បុគ្គលិកដឹងច្បាស់ពេលម្ហូបរួចរាល់។",
+  "Burger": "ប៊ឺហ្គឺ",
+  "Accepted": "បានទទួល",
+  "Steak": "សាច់គោអាំង",
+  "Preparing": "កំពុងរៀបចំ",
+  "Salmon": "ត្រីសាម៉ុន",
+  "Served": "បានបម្រើ",
+  "Romdual Restaurant": "ភោជនីយដ្ឋាន រំដួល",
+  "100+": "១០០+",
+  "99.9%": "៩៩.៩%",
+  "48h": "៤៨ម",
+  "Restaurant Served": "ភោជនីយដ្ឋានបានបម្រើ",
+  "Our very first partner!": "ដៃគូដំបូងបំផុតរបស់យើង!",
+  "Orders Processed": "ការបញ្ជាទិញបានដំណើរការ",
+  "Every single month": "ជារៀងរាល់ខែ",
+  "Platform Uptime": "ដំណើរការប្រព័ន្ធ",
+  "SLA guaranteed": "ធានា SLA",
+  "Onboarding Time": "ពេលវេលារៀបចំ",
+  "From signup to live": "ពីការចុះឈ្មោះដល់ការប្រើប្រាស់",
+  "Innovation": "នវានុវត្តន៍",
+  "We continuously evolve based on direct feedback from our restaurant partners. Every feature exists because someone needed it in the heat of service.": "យើងអភិវឌ្ឍជាបន្តបន្ទាប់ដោយផ្អែកលើមតិយោបល់ពីដៃគូរបស់យើង។",
+  "Simplicity": "ភាពសាមញ្ញ",
+  "Complex operations don't need complex software. We obsess over intuitive design that reduces staff training time from days to minutes.": "ប្រតិបត្តិការស្មុគស្មាញមិនត្រូវការកម្មវិធីស្មុគស្មាញទេ។ យើងផ្តោតលើការរចនាដែលកាត់បន្ថយពេលវេលាបណ្តុះបណ្តាលបុគ្គលិក។",
+  "Reliability": "ភាពជឿជាក់",
+  "When the dining room is full, your system cannot fail. Our cloud infrastructure and offline-first design guarantee you are always up.": "នៅពេលដែលភោជនីយដ្ឋានពេញ ប្រព័ន្ធរបស់អ្នកមិនអាចរអាក់រអួលបានទេ។",
+  "Partnership": "ភាពជាដៃគូ",
+  "We're not just a vendor — we are a growth partner. Our success is measured by the success of the restaurants we serve.": "យើងមិនត្រឹមតែជាអ្នកលក់ទេ — យើងជាដៃគូជំរុញកំណើនរបស់អ្នក។",
+  "July 2026": "កក្កដា ២០២៦",
+  "The Idea": "គំនិតផ្តួចផ្តើម",
+  "Frustrated with disconnected restaurant tools in Phnom Penh, our founders decided to build something better — from scratch.": "ខកចិត្តនឹងឧបករណ៍ដែលមិនភ្ជាប់គ្នា អ្នកបង្កើតយើងបានសម្រេចចិត្តបង្កើតអ្វីដែលប្រសើរជាង។",
+  "First Build": "ជំនាន់ដំបូង",
+  "SmartServe v1 launched with a working POS and QR ordering system. Our very first restaurant partner came on board.": "SmartServe v1 បានដាក់ដំណើរការជាមួយនឹងប្រព័ន្ធលក់ និងកុម្ម៉ង់។",
+  "August 2026": "សីហា ២០២៦",
+  "Built and shipped the Kitchen Display System based on real partner feedback, connecting the full FOH-to-kitchen pipeline.": "បានបង្កើតប្រព័ន្ធអេក្រង់ផ្ទះបាយ (KDS) ដោយជោគជ័យ។",
+  "Launched the interactive floor map and table booking system, making SmartServe a complete restaurant management platform.": "បានដាក់ដំណើរការប្រព័ន្ធកក់តុ និងផែនទីអន្តរកម្ម។",
+  "September 2026": "កញ្ញា ២០២៦",
+  "Now & Growing": "បច្ចុប្បន្ន និងអនាគត",
+  "Three months in — one partner, a full platform, and big plans ahead. English & Khmer support live. More restaurants coming soon.": "គាំទ្រភាសាអង់គ្លេស និងខ្មែរ។ ភោជនីយដ្ឋានជាច្រើនទៀតនឹងមកដល់ឆាប់ៗ។",
+  "No forced hardware": "មិនបង្ខំឧបករណ៍",
+  "Khmer & English": "ខ្មែរ និងអង់គ្លេស",
+  "Free onboarding": "រៀបចំឥតគិតថ្លៃ",
+  "24/7 priority support": "សេវាគាំទ្រ ២៤/៧",
+  "Co-Founder & CEO": "សហស្ថាបនិក និងអគ្គនាយក",
+  "Co-Founder & CTO": "សហស្ថាបនិក និងប្រធានបច្ចេកវិទ្យា",
+  "Lead Developer": "ប្រធានអ្នកអភិវឌ្ឍន៍",
+  "UI/UX Designer": "អ្នករចនា UI/UX",
+  "Co-Founder": "សហស្ថាបនិក",
+  "Piseth": "ពិសិដ្ឋ",
+  "RTN": "រតនៈ",
+  "TR": "ថុងរិទ្ធិ",
+  "WN": "វិច្ឆ័យ",
+  "SIM SOL": "ស៊ីមសូល",
+  "LIN POWIN": "លីនប៉ូវីន",
+  "Getting Started": "ការចាប់ផ្តើម",
+  "Do I need special hardware to run SmartServe?": "តើខ្ញុំត្រូវការឧបករណ៍ពិសេសដើម្បីប្រើ SmartServe ដែរឬទេ?",
+  "No special hardware required! SmartServe is entirely browser-based. You can run it on any existing iPads, Android tablets, laptops, or desktop computers you already own.": "មិនត្រូវការឧបករណ៍ពិសេសទេ! អ្នកអាចប្រើវានៅលើ iPad, Android, ឬកុំព្យូទ័រដែលមានស្រាប់។",
+  "How long does onboarding take?": "តើត្រូវចំណាយពេលប៉ុន្មានសម្រាប់ការរៀបចំ?",
+  "Most restaurants are fully configured and taking live orders within 48 hours of signing up. Our onboarding team will walk you through everything in a single session.": "ភោជនីយដ្ឋានភាគច្រើនអាចប្រើប្រាស់បានក្នុងរយៈពេល ៤៨ ម៉ោងបន្ទាប់ពីចុះឈ្មោះ។",
+  "Is there a free trial?": "តើមានការសាកល្បងឥតគិតថ្លៃទេ?",
+  "Yes! We offer a full-featured 14-day free trial with no credit card required. You get access to every module — POS, QR ordering, KDS, and table booking — with no limitations.": "មាន! យើងផ្តល់ជូនការសាកល្បងឥតគិតថ្លៃ ១៤ ថ្ងៃ។",
+  "Platform & Features": "ប្រព័ន្ធ និងមុខងារ",
+  "Does SmartServe work offline?": "តើ SmartServe អាចប្រើពេលគ្មានអ៊ីនធឺណិតទេ?",
+  "Yes. Our POS and KDS modules have an offline-first design. Orders taken during a network outage are queued and automatically synced when the connection is restored.": "បាទ។ ប្រព័ន្ធរបស់យើងអាចធ្វើការកត់ត្រាពេលដាច់អ៊ីនធឺណិត ហើយនឹងបញ្ជូនស្វ័យប្រវត្តិពេលមានអ៉ីនធឺណិតវិញ។",
+  "Can I customize the QR menus?": "តើខ្ញុំអាចកែច្នៃមុខម្ហូប QR បានទេ?",
+  "Absolutely. You can add your logo, brand colors, and custom fonts. Menus also support high-resolution photos for every item.": "បាន។ អ្នកអាចបន្ថែមឡូហ្គោ ពណ៌ និងរូបភាពកម្រិតច្បាស់សម្រាប់មុខម្ហូបនីមួយៗ។",
+  "Does it integrate with my accounting software?": "តើវាភ្ជាប់ជាមួយកម្មវិធីគណនេយ្យខ្ញុំទេ?",
+  "We currently offer one-click integrations with QuickBooks Online and Xero. Daily sales data, tips, and taxes are synced automatically.": "យើងភ្ជាប់ដោយស្វ័យប្រវត្តិជាមួយ QuickBooks Online និង Xero។",
+  "Pricing & Support": "តម្លៃ និងការគាំទ្រ",
+  "Are there any hidden fees or transaction costs?": "តើមានតម្លៃលាក់កំបាំងទេ?",
+  "No hidden fees. We charge a flat monthly subscription. However, standard credit card processing fees from our payment partners still apply to transactions.": "គ្មានតម្លៃលាក់កំបាំងទេ។ យើងគិតថ្លៃប្រចាំខែថេរ។",
+  "What kind of support do you offer?": "តើអ្នកផ្តល់សេវាគាំទ្រអ្វីខ្លះ?",
+  "All plans include email and chat support. Premium plans include a dedicated account manager and a 24/7 priority hotline. Our average response time is under 2 hours.": "គ្រប់កញ្ចប់ទាំងអស់មានការគាំទ្រតាមអ៊ីនធឺណិត និងអ៊ីមែល។",
+  "Can I cancel anytime?": "តើខ្ញុំអាចឈប់ប្រើប្រាស់ពេលណាក៏បានមែនទេ?",
+  "Absolutely. No long-term contracts. You can upgrade, downgrade, or cancel your subscription at any time from your account settings. No cancellation fees.": "បាទ។ គ្មានកិច្ចសន្យារយៈពេលវែងទេ។ អ្នកអាចបញ្ឈប់ការប្រើប្រាស់នៅពេលណាក៏បាន ដោយមិនមានថ្លៃផាកពិន័យ។"
 }

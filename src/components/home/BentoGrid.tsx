@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Store, ScanLine, CalendarRange, UtensilsCrossed, Users, QrCode } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -20,6 +21,7 @@ const stagger = {
 };
 
 export default function BentoGrid() {
+  const { t } = useTranslation();
   const bentoFeatures = [
     {
       title: "Smart POS",
@@ -74,7 +76,7 @@ export default function BentoGrid() {
               <div className="w-full h-full bg-white rounded-t-[2rem] overflow-hidden flex flex-col relative">
                 {/* Screen Header */}
                 <div className="bg-brand-base pt-8 pb-10 px-4 text-center rounded-b-[2rem] shadow-sm">
-                  <p className="text-white text-xs font-bold tracking-widest uppercase mb-1">Table 12</p>
+                  <p className="text-white text-xs font-bold tracking-widest uppercase mb-1">{t("home.bento.table12") || "Table 12"}</p>
                   <div className="w-12 h-1 bg-white/20 rounded-full mx-auto"></div>
                 </div>
 
@@ -157,9 +159,9 @@ export default function BentoGrid() {
     <section id="features" className="py-24 lg:py-32 bg-gray-50 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="max-w-2xl mb-8">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-5 border border-orange-200 shadow-sm">Platform</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-5 border border-orange-200 shadow-sm">{t("home.bento.badge")}</span>
           <h3 className="text-4xl md:text-4xl font-extrabold text-brand-base leading-tight">
-            Everything you need to <br className="hidden md:block" /> run the house
+            {t("home.bento.title_part1")} <br className="hidden md:block" /> {t("home.bento.title_part2")}
           </h3>
         </motion.div>
 
@@ -183,8 +185,8 @@ export default function BentoGrid() {
                 <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-white shadow-sm border border-gray-100 ${feature.iconClass || ""}`}>
                   {feature.icon}
                 </div>
-                <h4 className={`text-2xl font-bold mb-3 ${feature.iconClass && feature.iconClass.includes('text-white') ? 'text-white' : 'text-brand-base'}`}>{feature.title}</h4>
-                <p className={`text-lg leading-relaxed ${feature.descClass || 'text-gray-600'}`}>{feature.desc}</p>
+                <h4 className={`text-2xl font-bold mb-3 ${feature.iconClass && feature.iconClass.includes('text-white') ? 'text-white' : 'text-brand-base'}`}>{t(feature.title)}</h4>
+                <p className={`text-lg leading-relaxed ${feature.descClass || 'text-gray-600'}`}>{t(feature.desc)}</p>
 
                 {feature.content && (
                   <div className="mt-6 flex-1 relative flex flex-col justify-end">

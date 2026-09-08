@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { partners } from '@/mocks/home.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -12,12 +13,13 @@ const fadeIn = {
 };
 
 export default function PartnerMarquee() {
+  const { t } = useTranslation();
   return (
     <section className="py-32 bg-[#FFF9F2] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-14">
-          <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-orange-200">What Our Partners Say</span>
-          <h2 className="text-4xl font-extrabold text-[#3E2B20]">Trusted by restaurants that care.</h2>
+          <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-orange-200">{t("home.partners.badge")}</span>
+          <h2 className="text-4xl font-extrabold text-[#3E2B20]">{t("home.partners.title")}</h2>
         </motion.div>
 
         {/* Partner Logos */}
@@ -38,7 +40,7 @@ export default function PartnerMarquee() {
                       alt={partner.name}
                       className="h-16 max-w-[180px] object-contain"
                     />
-                    <span className="text-xl font-bold text-gray-600 tracking-wide">{partner.name}</span>
+                    <span className="text-xl font-bold text-gray-600 tracking-wide">{t(partner.name)}</span>
                   </div>
                 );
               })}

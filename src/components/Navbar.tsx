@@ -2,14 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useTranslation } from "react-i18next";
+import SwitchLanguage from "./switchLanguage";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,9 +24,9 @@ export default function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "FAQs", href: "/faq" },
+    { name: t("Home"), href: "/" },
+    { name: t("About"), href: "/about" },
+    { name: t("FAQs"), href: "/faq" },
   ];
 
   return (
@@ -51,10 +55,8 @@ export default function Navbar() {
         </nav>
 
         {/* CTA (Desktop) */}
-        <div className="hidden md:block">
-           <Link href="/faq#contact" className="px-6 py-2.5 rounded-full bg-brand-base text-white font-bold text-sm hover:bg-brand-secondary transition-colors shadow-lg shadow-brand-base/20">
-             Book Demo
-           </Link>
+        <div className="hidden md:flex items-center gap-4">
+           <SwitchLanguage />
         </div>
 
         {/* Mobile Menu Button */}
@@ -86,13 +88,10 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <Link 
-               href="/faq#contact"
-               onClick={() => setIsMobileMenuOpen(false)}
-               className="mt-2 text-center w-full px-4 py-3 rounded-xl bg-brand-base text-white font-bold hover:bg-brand-secondary transition-colors"
-            >
-               Book Demo
-            </Link>
+            
+            <div className="flex flex-col gap-2 mt-2 border-t border-gray-100 pt-3 items-center">
+              <SwitchLanguage />
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>

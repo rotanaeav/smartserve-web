@@ -1,3 +1,224 @@
 {
-  "hello": "Hello"
+  "1": "1",
+  "Home": "Home",
+  "About": "About",
+  "FAQs": "FAQs",
+  "Book Demo": "Book Demo",
+  "home": {
+    "hero": {
+      "title_part1": "Run a Smarter",
+      "title_part2": "Restaurant",
+      "description": "SmartServe is the all-in-one platform powering modern restaurants - from the front door to the kitchen. Replace 4 apps with one seamlessly integrated solution.",
+      "bookDemo": "Book a Free Demo",
+      "todaysSales": "Today's Sales",
+      "tablesOccupied": "Tables Occupied"
+    },
+    "frontOfHouse": {
+      "badge": "Front of House",
+      "title": "Run your front of house like clockwork",
+      "description": "Deliver a flawless guest experience with intuitive tools designed for hospitality professionals.",
+      "tableStatus": "Table 12 • Paid",
+      "paymentReceived": "$142.50 Received"
+    },
+    "backOfHouse": {
+      "badge": "Back of House",
+      "title": "Keep your kitchen in perfect sync",
+      "description": "Keep your kitchen firing on all cylinders with tools that eliminate miscommunication and reduce wait times."
+    },
+    "bento": {
+      "badge": "Platform",
+      "title_part1": "Everything you need to",
+      "title_part2": "run the house",
+      "table12": "Table 12"
+    },
+    "cta": {
+      "title": "Ready to upgrade your service?",
+      "description": "Join the next generation of restaurants running on SmartServe. Get started today.",
+      "bookDemo": "Book a Demo",
+      "learnMore": "Learn More"
+    },
+    "partners": {
+      "badge": "What Our Partners Say",
+      "title": "Trusted by restaurants that care."
+    }
+  },
+  "about": {
+    "hero": {
+      "badge": "Our Story",
+      "title_part1": "Empowering Every",
+      "title_part2": "Restaurant to Thrive.",
+      "description": "We started SmartServe because we lived the chaos of running a restaurant without the right tools."
+    },
+    "mission": {
+      "badge": "Our Mission",
+      "title_part1": "Built by restaurant people,",
+      "title_part2": "for restaurant people.",
+      "description": "We built SmartServe on the floor, during service — because we lived the chaos ourselves."
+    },
+    "team": {
+      "badge": "The People",
+      "title": "Meet the Team",
+      "description": "A small but mighty team that built a full platform in just 3 months."
+    },
+    "values": {
+      "badge": "What Drives Us",
+      "title": "Our Core Values"
+    },
+    "timeline": {
+      "badge": "How We Got Here",
+      "title": "Our Journey"
+    },
+    "cta": {
+      "badge": "Join the Movement",
+      "title": "Want to be part of the story?",
+      "description": "Whether you are a small cafe or a multi-outlet hotel group, SmartServe has a plan to fit your operation.",
+      "getInTouch": "Get in Touch",
+      "seePlatform": "See the Platform"
+    }
+  },
+  "faq": {
+    "hero": {
+      "badge": "Support Center",
+      "title_part1": "How can we",
+      "title_part2": "help you?",
+      "description": "Browse common questions below, or reach out to our team directly."
+    },
+    "contact": {
+      "badge": "Get In Touch",
+      "title": "Still have questions?",
+      "description": "Our team responds within 24 hours. We're here to help you succeed.",
+      "form": {
+        "title": "Send us a message",
+        "name": "Your Name",
+        "placeholder_name": "John Doe",
+        "restaurant": "Restaurant Name",
+        "placeholder_restaurant": "The Great Cafe",
+        "email": "Email Address",
+        "placeholder_email": "john@example.com",
+        "phone": "Phone Number",
+        "placeholder_phone": "+855 12 345 678",
+        "message": "Message",
+        "placeholder_message": "Tell us about your restaurant...",
+        "submit": "Send Message"
+      },
+      "fast_response": {
+        "title": "Fast Response",
+        "description": "Average reply under 2 hours"
+      }
+    }
+  },
+  "footer": {
+    "description": "The all-in-one platform built specifically to empower modern restaurants with seamless FOH and BOH operations.",
+    "quick_links": {
+      "title": "Quick Links",
+      "features": "Platform Features",
+      "services": "Our Services",
+      "about": "About the Company",
+      "faq": "FAQs & Support"
+    },
+    "contact_us": {
+      "title": "Contact Us",
+      "address": "123 Innovation Drive,<br/>Tech District, City 12345",
+      "phone": "+855 12 345 678",
+      "email": "hello@smartserve.co"
+    },
+    "copyright": {
+      "rights_reserved": "All rights reserved.",
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service"
+    }
+  },
+  "Smart POS": "Smart POS",
+  "Lightning-fast point of sale for walk-ins, table service, and takeaways.": "Lightning-fast point of sale for walk-ins, table service, and takeaways.",
+  "QR Ordering": "QR Ordering",
+  "Guests can scan, order, and pay directly from their phones.": "Guests can scan, order, and pay directly from their phones.",
+  "Table Booking": "Table Booking",
+  "Interactive floor map for guests to book their perfect table in advance.": "Interactive floor map for guests to book their perfect table in advance.",
+  "Kitchen Display": "Kitchen Display",
+  "Digital display that instantly routes orders to the correct kitchen station.": "Digital display that instantly routes orders to the correct kitchen station.",
+  "Floor map reservations": "Floor map reservations",
+  "Guests see a real-time visualization of your restaurant.": "Guests see a real-time visualization of your restaurant.",
+  "QR self-ordering": "QR self-ordering",
+  "No apps, no downloads. Just scan and order in seconds.": "No apps, no downloads. Just scan and order in seconds.",
+  "Live table tracking": "Live table tracking",
+  "Always know the status of every table from a single screen.": "Always know the status of every table from a single screen.",
+  "Digital KDS": "Digital KDS",
+  "Priority color-coding and automatic station routing.": "Priority color-coding and automatic station routing.",
+  "Ticket time tracking": "Ticket time tracking",
+  "Get alerts before orders exceed their target time.": "Get alerts before orders exceed their target time.",
+  "Real-time sync": "Real-time sync",
+  "Waitstaff see exactly when a dish is ready to be run.": "Waitstaff see exactly when a dish is ready to be run.",
+  "Burger": "Burger",
+  "Accepted": "Accepted",
+  "Steak": "Steak",
+  "Preparing": "Preparing",
+  "Salmon": "Salmon",
+  "Served": "Served",
+  "Romdual Restaurant": "Romdual Restaurant",
+  "100+": "100+",
+  "99.9%": "99.9%",
+  "48h": "48h",
+  "Restaurant Served": "Restaurant Served",
+  "Our very first partner!": "Our very first partner!",
+  "Orders Processed": "Orders Processed",
+  "Every single month": "Every single month",
+  "Platform Uptime": "Platform Uptime",
+  "SLA guaranteed": "SLA guaranteed",
+  "Onboarding Time": "Onboarding Time",
+  "From signup to live": "From signup to live",
+  "Innovation": "Innovation",
+  "We continuously evolve based on direct feedback from our restaurant partners. Every feature exists because someone needed it in the heat of service.": "We continuously evolve based on direct feedback from our restaurant partners. Every feature exists because someone needed it in the heat of service.",
+  "Simplicity": "Simplicity",
+  "Complex operations don't need complex software. We obsess over intuitive design that reduces staff training time from days to minutes.": "Complex operations don't need complex software. We obsess over intuitive design that reduces staff training time from days to minutes.",
+  "Reliability": "Reliability",
+  "When the dining room is full, your system cannot fail. Our cloud infrastructure and offline-first design guarantee you are always up.": "When the dining room is full, your system cannot fail. Our cloud infrastructure and offline-first design guarantee you are always up.",
+  "Partnership": "Partnership",
+  "We're not just a vendor — we are a growth partner. Our success is measured by the success of the restaurants we serve.": "We're not just a vendor — we are a growth partner. Our success is measured by the success of the restaurants we serve.",
+  "July 2026": "July 2026",
+  "The Idea": "The Idea",
+  "Frustrated with disconnected restaurant tools in Phnom Penh, our founders decided to build something better — from scratch.": "Frustrated with disconnected restaurant tools in Phnom Penh, our founders decided to build something better — from scratch.",
+  "First Build": "First Build",
+  "SmartServe v1 launched with a working POS and QR ordering system. Our very first restaurant partner came on board.": "SmartServe v1 launched with a working POS and QR ordering system. Our very first restaurant partner came on board.",
+  "August 2026": "August 2026",
+  "Built and shipped the Kitchen Display System based on real partner feedback, connecting the full FOH-to-kitchen pipeline.": "Built and shipped the Kitchen Display System based on real partner feedback, connecting the full FOH-to-kitchen pipeline.",
+  "Launched the interactive floor map and table booking system, making SmartServe a complete restaurant management platform.": "Launched the interactive floor map and table booking system, making SmartServe a complete restaurant management platform.",
+  "September 2026": "September 2026",
+  "Now & Growing": "Now & Growing",
+  "Three months in — one partner, a full platform, and big plans ahead. English & Khmer support live. More restaurants coming soon.": "Three months in — one partner, a full platform, and big plans ahead. English & Khmer support live. More restaurants coming soon.",
+  "No forced hardware": "No forced hardware",
+  "Khmer & English": "Khmer & English",
+  "Free onboarding": "Free onboarding",
+  "24/7 priority support": "24/7 priority support",
+  "Co-Founder & CEO": "Co-Founder & CEO",
+  "Co-Founder & CTO": "Co-Founder & CTO",
+  "Lead Developer": "Lead Developer",
+  "UI/UX Designer": "UI/UX Designer",
+  "Co-Founder": "Co-Founder",
+  "Piseth": "Piseth",
+  "RTN": "RTN",
+  "TR": "TR",
+  "WN": "WN",
+  "SIM SOL": "SIM SOL",
+  "LIN POWIN": "LIN POWIN",
+  "Getting Started": "Getting Started",
+  "Do I need special hardware to run SmartServe?": "Do I need special hardware to run SmartServe?",
+  "No special hardware required! SmartServe is entirely browser-based. You can run it on any existing iPads, Android tablets, laptops, or desktop computers you already own.": "No special hardware required! SmartServe is entirely browser-based. You can run it on any existing iPads, Android tablets, laptops, or desktop computers you already own.",
+  "How long does onboarding take?": "How long does onboarding take?",
+  "Most restaurants are fully configured and taking live orders within 48 hours of signing up. Our onboarding team will walk you through everything in a single session.": "Most restaurants are fully configured and taking live orders within 48 hours of signing up. Our onboarding team will walk you through everything in a single session.",
+  "Is there a free trial?": "Is there a free trial?",
+  "Yes! We offer a full-featured 14-day free trial with no credit card required. You get access to every module — POS, QR ordering, KDS, and table booking — with no limitations.": "Yes! We offer a full-featured 14-day free trial with no credit card required. You get access to every module — POS, QR ordering, KDS, and table booking — with no limitations.",
+  "Platform & Features": "Platform & Features",
+  "Does SmartServe work offline?": "Does SmartServe work offline?",
+  "Yes. Our POS and KDS modules have an offline-first design. Orders taken during a network outage are queued and automatically synced when the connection is restored.": "Yes. Our POS and KDS modules have an offline-first design. Orders taken during a network outage are queued and automatically synced when the connection is restored.",
+  "Can I customize the QR menus?": "Can I customize the QR menus?",
+  "Absolutely. You can add your logo, brand colors, and custom fonts. Menus also support high-resolution photos for every item.": "Absolutely. You can add your logo, brand colors, and custom fonts. Menus also support high-resolution photos for every item.",
+  "Does it integrate with my accounting software?": "Does it integrate with my accounting software?",
+  "We currently offer one-click integrations with QuickBooks Online and Xero. Daily sales data, tips, and taxes are synced automatically.": "We currently offer one-click integrations with QuickBooks Online and Xero. Daily sales data, tips, and taxes are synced automatically.",
+  "Pricing & Support": "Pricing & Support",
+  "Are there any hidden fees or transaction costs?": "Are there any hidden fees or transaction costs?",
+  "No hidden fees. We charge a flat monthly subscription. However, standard credit card processing fees from our payment partners still apply to transactions.": "No hidden fees. We charge a flat monthly subscription. However, standard credit card processing fees from our payment partners still apply to transactions.",
+  "What kind of support do you offer?": "What kind of support do you offer?",
+  "All plans include email and chat support. Premium plans include a dedicated account manager and a 24/7 priority hotline. Our average response time is under 2 hours.": "All plans include email and chat support. Premium plans include a dedicated account manager and a 24/7 priority hotline. Our average response time is under 2 hours.",
+  "Can I cancel anytime?": "Can I cancel anytime?",
+  "Absolutely. No long-term contracts. You can upgrade, downgrade, or cancel your subscription at any time from your account settings. No cancellation fees.": "Absolutely. No long-term contracts. You can upgrade, downgrade, or cancel your subscription at any time from your account settings. No cancellation fees."
 }

@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import { faqCategories } from '@/mocks/faq.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -13,6 +14,7 @@ const fadeIn = {
 };
 
 export default function FaqAccordion() {
+  const { t } = useTranslation();
   const [openFaq, setOpenFaq] = useState<string | null>(null);
 
   return (
@@ -27,7 +29,7 @@ export default function FaqAccordion() {
                   {cat.icon}
                 </div>
                 <h2 className="text-base font-extrabold text-gray-900 uppercase tracking-wider">
-                  {cat.category}
+                  {t(cat.category)}
                 </h2>
               </div>
 
@@ -50,7 +52,7 @@ export default function FaqAccordion() {
                             ?
                           </span>
                           <span className={`font-semibold text-base transition-colors ${isOpen ? 'text-brand-base' : 'text-gray-800'}`}>
-                            {faq.q}
+                            {t(faq.q)}
                           </span>
                         </div>
                         <span className={`transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-brand-base' : 'text-gray-400'}`}>
@@ -67,7 +69,7 @@ export default function FaqAccordion() {
                           >
                             <div className="px-5 pb-5">
                               <div className="ml-[3rem] border-l-2 border-gray-300 pl-4 text-gray-600 leading-relaxed text-sm">
-                                {faq.a}
+                                {t(faq.a)}
                               </div>
                             </div>
                           </motion.div>

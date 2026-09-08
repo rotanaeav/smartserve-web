@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { team } from '@/mocks/about.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -12,13 +13,14 @@ const fadeIn = {
 };
 
 export default function AboutTeam() {
+  const { t } = useTranslation();
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">The People</span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">Meet the Team</h2>
-          <p className="text-gray-500 mt-4 text-lg">A small but mighty team that built a full platform in just 3 months.</p>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">{t("about.team.badge")}</span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">{t("about.team.title")}</h2>
+          <p className="text-gray-500 mt-4 text-lg">{t("about.team.description")}</p>
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 justify-center">
@@ -49,8 +51,8 @@ export default function AboutTeam() {
                     <div className="w-2 h-2 rounded-full bg-white" />
                   </div>
                 </div>
-                <h4 className="font-extrabold text-gray-900 text-lg leading-tight">{member.name}</h4>
-                <p className="text-brand-base font-semibold text-sm mt-1">{member.role}</p>
+                <h4 className="font-extrabold text-gray-900 text-lg leading-tight">{t(member.name)}</h4>
+                <p className="text-brand-base font-semibold text-sm mt-1">{t(member.role)}</p>
               </motion.div>
             );
           })}

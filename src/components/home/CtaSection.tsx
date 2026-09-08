@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 30 },
@@ -13,6 +14,7 @@ const fadeIn = {
 };
 
 export default function CtaSection() {
+  const { t } = useTranslation();
   return (
     <section className="py-24 lg:py-32 bg-white relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -27,23 +29,23 @@ export default function CtaSection() {
 
           <div className="relative z-10 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
-              Ready to upgrade your service?
+              {t("home.cta.title")}
             </h2>
             <p className="text-lg text-white/90 mb-10 font-medium max-w-xl mx-auto">
-              Join the next generation of restaurants running on SmartServe. Get started today.
+              {t("home.cta.description")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/faq#contact"
                 className="px-8 py-3.5 rounded-full bg-white text-brand-base font-extrabold text-base hover:bg-brand-tint-bg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
               >
-                Book a Demo <ArrowRight size={20} />
+                {t("home.cta.bookDemo")} <ArrowRight size={20} />
               </Link>
               <Link
                 href="/about"
                 className="px-8 py-3.5 rounded-full bg-black/20 text-white font-bold text-base hover:bg-black/30 border border-white/20 transition-all backdrop-blur-md flex items-center justify-center"
               >
-                Learn More
+                {t("home.cta.learnMore")}
               </Link>
             </div>
           </div>

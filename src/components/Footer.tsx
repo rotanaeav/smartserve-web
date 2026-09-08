@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { UtensilsCrossed, MapPin, Mail, Phone, ExternalLink, Globe, AtSign, Rss, Send } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="relative bg-[#faf5f0] border-t border-brand-base/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -13,7 +15,7 @@ export default function Footer() {
               <img src="/logo/smartserve-br.png" alt="SmartServe Technologies" className="h-16 w-auto object-contain" />
             </Link>
             <p className="mt-6 text-gray-600 leading-relaxed max-w-sm">
-              The all-in-one platform built specifically to empower modern restaurants with seamless FOH and BOH operations.
+              {t("footer.description")}
             </p>
             <div className="flex gap-3 mt-6">
               <a href="#" className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/80 border border-[#faebe5] text-[#e88d2b] shadow-sm hover:bg-[#fff0e8] transition-colors"><Globe size={18} /></a>
@@ -29,15 +31,15 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:col-span-3">
             <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-base">
-              Quick Links
+              {t("footer.quick_links.title")}
             </h3>
             <div className="mt-2.5 h-0.5 w-8 rounded-full bg-gradient-to-r from-[#e88d2b] to-[#e88d2b]/20" />
             <ul className="mt-6 space-y-3">
               {[
-                { label: "Platform Features", href: "/#features" },
-                { label: "Our Services", href: "/#services" },
-                { label: "About the Company", href: "/about" },
-                { label: "FAQs & Support", href: "/faq" },
+                { label: t("footer.quick_links.features"), href: "/#features" },
+                { label: t("footer.quick_links.services"), href: "/#services" },
+                { label: t("footer.quick_links.about"), href: "/about" },
+                { label: t("footer.quick_links.faq"), href: "/faq" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="group inline-flex items-center gap-2.5 text-base text-gray-600 hover:text-brand-base transition-colors">
@@ -52,7 +54,7 @@ export default function Footer() {
           {/* Contact Us */}
           <div className="lg:col-span-4">
             <h3 className="text-sm font-bold uppercase tracking-[0.16em] text-brand-base">
-              Contact Us
+              {t("footer.contact_us.title")}
             </h3>
             <div className="mt-2.5 h-0.5 w-8 rounded-full bg-gradient-to-r from-[#e88d2b] to-[#e88d2b]/20" />
             <ul className="mt-6 space-y-4">
@@ -60,19 +62,19 @@ export default function Footer() {
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/80 border border-[#faebe5] text-[#e88d2b] shadow-sm">
                   <MapPin size={18} />
                 </span>
-                <span className="leading-snug mt-1">123 Innovation Drive,<br/>Tech District, City 12345</span>
+                <span className="leading-snug mt-1" dangerouslySetInnerHTML={{ __html: t("footer.contact_us.address") || "123 Innovation Drive,<br/>Tech District, City 12345" }}></span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/80 border border-[#faebe5] text-[#e88d2b] shadow-sm">
                   <Phone size={18} />
                 </span>
-                <span className="leading-snug text-base">+855 12 345 678</span>
+                <span className="leading-snug text-base">{t("footer.contact_us.phone") || "+855 12 345 678"}</span>
               </li>
               <li className="flex items-center gap-3 text-gray-600">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/80 border border-[#faebe5] text-[#e88d2b] shadow-sm">
                   <Mail size={18} />
                 </span>
-                <span className="leading-snug text-base">hello@smartserve.co</span>
+                <span className="leading-snug text-base">{t("footer.contact_us.email") || "hello@smartserve.co"}</span>
               </li>
             </ul>
           </div>
@@ -84,11 +86,11 @@ export default function Footer() {
       <div className="border-t border-brand-base/15 bg-[#f5ece3]/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} <span className="font-semibold text-brand-base">SmartServe Technologies</span>. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="font-semibold text-brand-base">SmartServe Technologies</span>. {t("footer.copyright.rights_reserved")}
           </p>
           <div className="flex gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-brand-base transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-base transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-brand-base transition-colors">{t("footer.copyright.privacy_policy")}</a>
+            <a href="#" className="hover:text-brand-base transition-colors">{t("footer.copyright.terms_of_service")}</a>
           </div>
         </div>
       </div>

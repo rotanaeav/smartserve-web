@@ -30,6 +30,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Switch to Hanuman font when Khmer language is active */
+html[lang="km"] body,
+html[lang="km"] * {
+  font-family: var(--font-hanuman), "Hanuman", serif !important;
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

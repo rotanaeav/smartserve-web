@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { values } from '@/mocks/about.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -12,12 +13,13 @@ const fadeIn = {
 };
 
 export default function AboutValues() {
+  const { t } = useTranslation();
   return (
     <section className="pt-20 pb-12 bg-[#FAF6F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">What Drives Us</span>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">Our Core Values</h2>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">{t("about.values.badge")}</span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">{t("about.values.title")}</h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -32,8 +34,8 @@ export default function AboutValues() {
                 {v.icon}
               </div>
               <div>
-                <h3 className="text-xl font-extrabold text-gray-900 mb-2">{v.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-lg">{v.desc}</p>
+                <h3 className="text-xl font-extrabold text-gray-900 mb-2">{t(v.title)}</h3>
+                <p className="text-gray-600 leading-relaxed text-lg">{t(v.desc)}</p>
               </div>
             </motion.div>
           ))}

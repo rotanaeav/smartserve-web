@@ -6,6 +6,7 @@ import { motion, useScroll } from "framer-motion";
 import { ArrowRight, TrendingUp, Award } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 // Sections
 import BentoGrid from "@/components/home/BentoGrid";
@@ -15,6 +16,7 @@ import PartnerMarquee from "@/components/home/PartnerMarquee";
 import CtaSection from "@/components/home/CtaSection";
 
 export default function Home() {
+  const { t } = useTranslation();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -71,13 +73,13 @@ export default function Home() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <h1 className="text-5xl lg:text-[4.5rem] font-extrabold text-white tracking-tight leading-[1.05] mb-6 drop-shadow-lg">
-                  Run a Smarter <br />
+                  {t("home.hero.title_part1")} <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-[#E08600] to-orange-200">
-                    Restaurant
+                    {t("home.hero.title_part2")}
                   </span>
                 </h1>
                 <p className="text-lg text-white/90 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium drop-shadow-md">
-                  SmartServe is the all-in-one platform powering modern restaurants - from the front door to the kitchen. Replace 4 apps with one seamlessly integrated solution.
+                  {t("home.hero.description")}
                 </p>
 
                 <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
@@ -85,7 +87,7 @@ export default function Home() {
                     href="/faq#contact"
                     className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#8A4A1C] text-white font-bold text-lg hover:bg-[#683612] transition-all shadow-[0_4px_30px_rgba(118,58,18,0.6)] hover:-translate-y-1 flex items-center justify-center gap-2 whitespace-nowrap border border-white/10"
                   >
-                    Book a Free Demo <ArrowRight size={20} />
+                    {t("home.hero.bookDemo")} <ArrowRight size={20} />
                   </Link>
                 </div>
               </motion.div>
@@ -112,7 +114,7 @@ export default function Home() {
                       <TrendingUp size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Today's Sales</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">{t("home.hero.todaysSales")}</p>
                       <p className="text-lg font-black text-gray-900 leading-none">$4,250</p>
                     </div>
                   </motion.div>
@@ -126,7 +128,7 @@ export default function Home() {
                       <Award size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Tables Occupied</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">{t("home.hero.tablesOccupied")}</p>
                       <p className="text-lg font-black text-gray-900 leading-none">18 / 24</p>
                     </div>
                   </motion.div>

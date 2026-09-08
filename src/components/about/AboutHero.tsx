@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
 import { stats } from '@/mocks/about.mock';
+import { useTranslation } from 'react-i18next';
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -13,6 +14,7 @@ const fadeIn = {
 };
 
 export default function AboutHero() {
+  const { t } = useTranslation();
   return (
     <section className="relative pt-52 pb-40 overflow-hidden">
       {/* Dark charcoal background */}
@@ -31,16 +33,16 @@ export default function AboutHero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/80 font-semibold text-sm mb-8">
             <Rocket size={14} className="text-orange-300" />
-            Our Story
+            {t("about.hero.badge")}
           </div>
           <h1 className="text-5xl lg:text-7xl font-extrabold text-white mb-8 leading-tight tracking-tight">
-            Empowering Every<br />
+            {t("about.hero.title_part1")}<br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-300 via-[#E08600] to-orange-200">
-              Restaurant to Thrive.
+              {t("about.hero.title_part2")}
             </span>
           </h1>
           <p className="text-lg text-white/70 max-w-3xl mx-auto leading-relaxed font-medium">
-            We started SmartServe because we lived the chaos of running a restaurant without the right tools. Our mission: democratize enterprise-grade restaurant technology for every establishment, regardless of size or budget.
+            {t("about.hero.description")}
           </p>
         </motion.div>
       </div>
@@ -56,9 +58,9 @@ export default function AboutHero() {
               transition={{ delay: 0.3 + i * 0.1, duration: 0.6 }}
               className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 text-center hover:bg-white/15 transition-all"
             >
-              <div className="text-4xl font-black text-white mb-1">{s.value}</div>
-              <div className="font-bold text-white/90 text-sm mb-0.5">{s.label}</div>
-              <div className="text-xs text-white/50">{s.sub}</div>
+              <div className="text-4xl font-black text-white mb-1">{t(s.value)}</div>
+              <div className="font-bold text-white/90 text-sm mb-0.5">{t(s.label)}</div>
+              <div className="text-xs text-white/50">{t(s.sub)}</div>
             </motion.div>
           ))}
         </div>
