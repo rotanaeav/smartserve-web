@@ -2,14 +2,17 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { motion, useScroll, useTransform } from "framer-motion";
-import {
-  ArrowRight, CheckCircle2, QrCode, ChefHat, TableProperties,
-  Zap, Shield, BarChart3, Clock, Users, TrendingUp, Award,
-  Store, ScanLine, CalendarRange, UtensilsCrossed, MonitorSmartphone
-} from "lucide-react";
+import { motion, useScroll } from "framer-motion";
+import { ArrowRight, TrendingUp, Award } from "lucide-react";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
+
+// Sections
+import BentoGrid from "@/components/home/BentoGrid";
+import FrontOfHouse from "@/components/home/FrontOfHouse";
+import BackOfHouse from "@/components/home/BackOfHouse";
+import PartnerMarquee from "@/components/home/PartnerMarquee";
+import CtaSection from "@/components/home/CtaSection";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -34,147 +37,6 @@ export default function Home() {
     viewport: { once: true, margin: "-100px" },
     transition: { duration: 0.7, ease: "easeOut" as const }
   };
-
-  const stagger = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const bentoFeatures = [
-    {
-      title: "Smart POS",
-      desc: "Lightning-fast point of sale for walk-ins, table service, and takeaways.",
-      descClass: "text-gray-800 max-w-[55%] md:max-w-[50%]",
-      icon: <Store size={24} className="text-brand-base" />,
-      colSpan: "col-span-1 md:col-span-2",
-      rowSpan: "md:row-span-1",
-      bgClass: "bg-gradient-to-br from-white to-brand-tint-bg/50 overflow-visible",
-      content: (
-        <div className="absolute right-4 bottom-4 w-[45%] h-full min-h-[200px] pointer-events-none flex items-end justify-end">
-          {/* Abstract Receipt */}
-          <div className="absolute right-12 bottom-0 w-32 h-40 bg-white rounded-t-xl shadow-xl border border-gray-100 p-5 transform rotate-[-5deg] group-hover:translate-y-[-10px] group-hover:rotate-[-8deg] transition-all duration-500 flex flex-col gap-3 z-10">
-            <div className="w-full h-1.5 bg-gray-100 rounded-full mb-1"></div>
-            <div className="w-3/4 h-1.5 bg-gray-100 rounded-full"></div>
-            <div className="w-1/2 h-1.5 bg-gray-100 rounded-full"></div>
-            <div className="w-full flex justify-between mt-auto">
-              <div className="w-1/2 h-4 bg-[#683612] rounded-md"></div>
-            </div>
-          </div>
-          {/* Abstract Credit Card */}
-          <div className="absolute right-0 bottom-8 w-40 h-24 bg-[#2D1F17] rounded-xl shadow-2xl border border-[#3E2B20] p-4 transform rotate-[10deg] group-hover:translate-y-[-20px] group-hover:translate-x-[-10px] group-hover:rotate-[5deg] transition-all duration-500 z-20 flex flex-col justify-between">
-            <div className="w-7 h-4.5 bg-[#D4AF37] rounded-sm"></div>
-            <div className="flex justify-end relative">
-              <div className="w-6 h-6 rounded-full bg-[#EB001B] absolute right-4 z-10"></div>
-              <div className="w-6 h-6 rounded-full bg-[#F79E1B] opacity-90 relative z-20"></div>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "QR Ordering",
-      desc: "Guests can scan, order, and pay directly from their phones.",
-      icon: <ScanLine size={24} className="text-brand-base" />,
-      colSpan: "col-span-1 md:col-span-1",
-      rowSpan: "md:row-span-2",
-      bgClass: "bg-gradient-to-b from-white to-gray-50",
-      content: (
-        <div className="flex-1 flex items-end justify-center min-h-[280px] pt-10">
-          <div className="relative group-hover:-translate-y-4 transition-transform duration-700 ease-out">
-            <div className="absolute inset-0 bg-brand-secondary/10 blur-3xl rounded-full scale-150 translate-y-10" />
-
-            {/* Phone Mockup */}
-            <div className="w-48 h-80 bg-[#1A110D] rounded-t-[2.5rem] p-1.5 shadow-2xl relative border-x-4 border-t-4 border-[#2A1D16] z-10 flex flex-col items-center">
-              {/* Phone Notch */}
-              <div className="absolute top-1.5 inset-x-0 h-5 flex justify-center z-20">
-                <div className="w-16 h-4 bg-[#1A110D] rounded-b-2xl"></div>
-              </div>
-
-              {/* Phone Screen */}
-              <div className="w-full h-full bg-white rounded-t-[2rem] overflow-hidden flex flex-col relative">
-                {/* Screen Header */}
-                <div className="bg-brand-base pt-8 pb-10 px-4 text-center rounded-b-[2rem] shadow-sm">
-                  <p className="text-white text-xs font-bold tracking-widest uppercase mb-1">Table 12</p>
-                  <div className="w-12 h-1 bg-white/20 rounded-full mx-auto"></div>
-                </div>
-
-                {/* QR / Menu items overlay */}
-                <div className="flex-1 -mt-6 px-4 flex flex-col items-center gap-3">
-                  <div className="bg-white p-3 rounded-2xl shadow-lg border border-gray-100 w-full flex justify-center group-hover:scale-105 transition-transform duration-500">
-                    <QrCode size={70} className="text-brand-base" strokeWidth={1.5} />
-                  </div>
-                  <div className="w-full bg-gray-50 rounded-xl p-3 border border-gray-100 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-gray-200 shrink-0"></div>
-                    <div className="flex-1 flex flex-col gap-1.5">
-                      <div className="w-full h-1.5 bg-gray-300 rounded-full"></div>
-                      <div className="w-2/3 h-1.5 bg-gray-200 rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="w-full bg-gray-50 rounded-xl p-3 border border-gray-100 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-gray-200 shrink-0"></div>
-                    <div className="flex-1 flex flex-col gap-1.5">
-                      <div className="w-full h-1.5 bg-gray-300 rounded-full"></div>
-                      <div className="w-2/3 h-1.5 bg-gray-200 rounded-full"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    },
-    {
-      title: "Table Booking",
-      desc: "Interactive floor map for guests to book their perfect table in advance.",
-      icon: <CalendarRange size={24} className="text-brand-base" />,
-      colSpan: "col-span-1 md:col-span-1",
-      rowSpan: "md:row-span-1",
-      bgClass: "bg-white",
-      content: (
-        <div className="mt-8 relative h-16 w-full flex justify-center gap-3">
-          {[...Array(3)].map((_, i) => (
-            <div key={i} className={`absolute w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500 ${i === 0 ? '-translate-x-12 rotate-[-10deg] bg-white border border-gray-100 group-hover:-translate-x-16 z-10' : i === 1 ? 'z-30 bg-brand-base border-4 border-white group-hover:-translate-y-2' : 'translate-x-12 rotate-[10deg] bg-white border border-gray-100 group-hover:translate-x-16 z-20'}`}>
-              <Users size={20} className={i === 1 ? 'text-white' : 'text-gray-400'} />
-            </div>
-          ))}
-        </div>
-      )
-    },
-    {
-      title: "Kitchen Display",
-      desc: "Digital display that instantly routes orders to the correct kitchen station.",
-      icon: <UtensilsCrossed size={24} className="text-white" />,
-      colSpan: "col-span-1 md:col-span-1",
-      rowSpan: "md:row-span-1",
-      bgClass: "bg-brand-base text-white relative overflow-hidden",
-      iconClass: "text-brand-base bg-white/20 border-white/20 backdrop-blur-md",
-      descClass: "text-white/80",
-      content: (
-        <div className="mt-6 flex flex-col gap-3 relative z-10">
-          <div className="h-12 w-full bg-white/10 rounded-xl flex items-center px-4 gap-4 backdrop-blur-sm border border-white/10 transform transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:shadow-lg">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-400 animate-pulse shadow-[0_0_10px_rgba(248,113,113,0.8)]" />
-            <div className="flex flex-col gap-1.5 flex-1">
-              <div className="h-2 w-1/3 bg-white/40 rounded-full" />
-              <div className="h-1.5 w-1/4 bg-white/20 rounded-full" />
-            </div>
-            <div className="text-xs font-bold text-red-300">12m</div>
-          </div>
-          <div className="h-12 w-[85%] bg-white/10 rounded-xl flex items-center px-4 gap-4 backdrop-blur-sm border border-white/10 transform transition-all duration-700 group-hover:-translate-y-2 group-hover:translate-x-3 group-hover:shadow-lg">
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-            <div className="flex flex-col gap-1.5 flex-1">
-              <div className="h-2 w-1/2 bg-white/30 rounded-full" />
-              <div className="h-1.5 w-1/3 bg-white/20 rounded-full" />
-            </div>
-            <div className="text-xs font-bold text-yellow-300">5m</div>
-          </div>
-        </div>
-      )
-    }
-  ];
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-brand-secondary selection:text-white bg-background font-sans">
@@ -250,15 +112,15 @@ export default function Home() {
                       <TrendingUp size={20} />
                     </div>
                     <div>
-                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Today's Revenue</p>
-                      <p className="text-lg font-black text-gray-900 leading-none">$4,820</p>
+                      <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5">Today's Sales</p>
+                      <p className="text-lg font-black text-gray-900 leading-none">$4,250</p>
                     </div>
                   </motion.div>
 
                   <motion.div
-                    animate={{ y: [0, 8, 0] }}
+                    animate={{ y: [0, -8, 0] }}
                     transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-                    className="absolute -top-8 lg:-top-6 -right-4 lg:-right-8 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 flex items-center gap-3 z-20"
+                    className="absolute -top-6 -right-4 lg:-right-8 bg-white rounded-2xl p-4 shadow-xl border border-gray-100 flex items-center gap-3 z-20"
                   >
                     <div className="w-10 h-10 rounded-full bg-[#E08600]/10 flex items-center justify-center text-[#E08600]">
                       <Award size={20} />
@@ -289,265 +151,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── BENTO GRID FEATURES ── */}
-        <section id="features" className="py-24 lg:py-32 bg-gray-50 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div {...fadeIn} className="max-w-2xl mb-8">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-5 border border-orange-200 shadow-sm">Platform</span>
-              <h3 className="text-4xl md:text-4xl font-extrabold text-brand-base leading-tight">
-                Everything you need to <br className="hidden md:block" /> run the house
-              </h3>
-            </motion.div>
-
-            <motion.div
-              variants={stagger}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6"
-            >
-              {bentoFeatures.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={{ initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 } }}
-                  className={`${feature.colSpan} ${feature.rowSpan} ${feature.bgClass} rounded-3xl p-8 lg:p-10 border border-gray-200 shadow-[0_4px_20px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:border-brand-secondary/40 hover:shadow-2xl hover:shadow-brand-base/10 transition-all duration-500`}
-                >
-                  {/* Optional Background Pattern */}
-                  {feature.iconClass && <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] pointer-events-none" />}
-
-                  <div className="relative z-10 h-full flex flex-col">
-                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-white shadow-sm border border-gray-100 ${feature.iconClass || ""}`}>
-                      {feature.icon}
-                    </div>
-                    <h4 className={`text-2xl font-bold mb-3 ${feature.iconClass ? 'text-white' : 'text-brand-base'}`}>{feature.title}</h4>
-                    <p className={`text-lg leading-relaxed ${feature.descClass || 'text-black-900'}`}>{feature.desc}</p>
-
-                    {feature.content && (
-                      <div className="mt-6 flex-1 relative">
-                        {feature.content}
-                      </div>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* ── FRONT OF HOUSE SECTION ── */}
-        <section className="py-28 lg:py-32 bg-white overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            {/* Front of House */}
-            <div className="flex flex-col lg:flex-row items-center gap-16">
-              <motion.div {...fadeIn} className="flex-1 lg:pr-8">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-6 border border-orange-200 shadow-sm">Front of House</span>
-                <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
-                  Run your front of house like clockwork
-                </h2>
-                <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
-                  Deliver a flawless guest experience with intuitive tools designed for hospitality professionals.
-                </p>
-
-                <div className="space-y-4">
-                  {[
-                    { title: "Floor map reservations", desc: "Guests see a real-time visualization of your restaurant." },
-                    { title: "QR self-ordering", desc: "No apps, no downloads. Just scan and order in seconds." },
-                    { title: "Live table tracking", desc: "Always know the status of every table from a single screen." }
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex gap-4 items-start group cursor-default"
-                    >
-                      <div className="text-[#8A4A1C] shrink-0 mt-[3px] relative">
-                        <div className="absolute inset-0 bg-[#8A4A1C]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <CheckCircle2 size={20} className="relative z-10 group-hover:scale-110 transition-transform duration-500 ease-out" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#8A4A1C] transition-colors duration-300">{item.title}</h4>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div {...fadeIn} className="flex-1 w-full max-w-[520px] mx-auto relative h-[360px] lg:mt-16">
-                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl group border border-[#8A4A1C]/30">
-                  <img src="/front-house.png" alt="Luxury restaurant interior" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                </div>
-
-                {/* Floating Payment Card */}
-                <motion.div
-                  initial={{ y: 20, opacity: 0 }}
-                  whileInView={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 }}
-                  className="absolute -bottom-4 lg:-bottom-6 -left-2 lg:-left-6 bg-white/95 backdrop-blur-md border border-white/60 rounded-2xl p-3.5 pr-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-full bg-[#E8F5E9] flex items-center justify-center border border-[#C8E6C9]">
-                      <Zap className="text-[#2E7D32]" size={18} />
-                    </div>
-                    <div>
-                      <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Table 12 • Paid</p>
-                      <p className="text-[#3E2B20] font-black text-base">$142.50 Received</p>
-                    </div>
-                  </div>
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── BACK OF HOUSE SECTION ── */}
-        <section className="py-28 lg:py-32 bg-[#FAFAFA] overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
-              <motion.div {...fadeIn} className="flex-1 w-full max-w-[520px] mx-auto relative h-[360px] lg:mt-16">
-                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl group border border-[#8A4A1C]/30">
-                  <img src="/back-house.jpg" alt="Professional kitchen" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2A1D16]/80 via-transparent to-transparent" />
-                </div>
-
-                {/* Floating Kitchen Alerts */}
-                <div className="absolute top-8 -right-2 lg:-right-6 flex flex-col gap-3">
-                  <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-blue-500 ml-1" />
-                    <span className="font-bold text-[#3E2B20] text-sm">Burger • Accepted</span>
-                  </motion.div>
-                  <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-yellow-500 animate-ping ml-1" />
-                    <span className="font-bold text-[#3E2B20] text-sm">Steak • Preparing</span>
-                  </motion.div>
-                  <motion.div
-                    initial={{ x: 50, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    transition={{ delay: 0.6 }}
-                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
-                  >
-                    <div className="w-2 h-2 rounded-full bg-green-500 ml-1" />
-                    <span className="font-bold text-[#3E2B20] text-sm">Salmon • Served</span>
-                  </motion.div>
-                </div>
-              </motion.div>
-
-              <motion.div {...fadeIn} className="flex-1 lg:pl-8">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-[#E08600]/10 text-[#E08600] font-bold text-xs tracking-widest uppercase mb-6 border border-[#E08600]/20 shadow-sm">Back of House</span>
-                <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
-                  Keep your kitchen in perfect sync
-                </h2>
-                <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
-                  Keep your kitchen firing on all cylinders with tools that eliminate miscommunication and reduce wait times.
-                </p>
-
-                <div className="space-y-4">
-                  {[
-                    { title: "Digital KDS", desc: "Priority color-coding and automatic station routing." },
-                    { title: "Ticket time tracking", desc: "Get alerts before orders exceed their target time." },
-                    { title: "Real-time sync", desc: "Waitstaff see exactly when a dish is ready to be run." }
-                  ].map((item, i) => (
-                    <div
-                      key={i}
-                      className="flex gap-4 items-start group cursor-default"
-                    >
-                      <div className="text-[#3E2B20] shrink-0 mt-[3px] relative">
-                        <div className="absolute inset-0 bg-[#E08600]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <UtensilsCrossed size={20} className="relative z-10 group-hover:scale-110 group-hover:text-[#E08600] transition-all duration-500 ease-out" />
-                      </div>
-                      <div>
-                        <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#E08600] transition-colors duration-300">{item.title}</h4>
-                        <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* ── LOGO MARQUEE ── */}
-        <section className="py-32 bg-[#FFF9F2] overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-orange-200">What Our Partners Say</span>
-              <h2 className="text-4xl font-extrabold text-[#3E2B20]">Trusted by restaurants that care.</h2>
-            </motion.div>
-
-            {/* Partner Logos */}
-            <div className="relative mt-8">
-              {/* Fade edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF9F2] to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF9F2] to-transparent z-10 pointer-events-none" />
-
-              <div className="flex overflow-hidden">
-                <div className="flex gap-24 items-center whitespace-nowrap animate-marquee">
-                  {/* Real logos + duplicated for seamless loop */}
-                  {[...Array(12)].map((_, i) => (
-                    <div key={i} className="flex flex-col items-center gap-5 flex-shrink-0">
-                      <img
-                        src="/restuarant-logo/romdual-restaurant-logo.png"
-                        alt="Romdual Restaurant"
-                        className="h-16 max-w-[180px] object-contain"
-                      />
-                      <span className="text-xl font-bold text-gray-600 tracking-wide">Romdual Restaurant</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── ELEVATED CTA ── */}
-        <section className="py-24 lg:py-32 bg-white relative">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              {...fadeIn}
-              className="relative rounded-[3rem] overflow-hidden bg-brand-base text-center py-20 px-6 sm:px-12 shadow-2xl"
-            >
-              {/* Background Elements */}
-              <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]" />
-              <div className="absolute -top-40 -right-40 w-96 h-96 bg-brand-secondary rounded-full blur-[100px] opacity-60" />
-              <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#E08600] rounded-full blur-[100px] opacity-40" />
-
-              <div className="relative z-10 max-w-3xl mx-auto">
-                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
-                  Ready to upgrade your service?
-                </h2>
-                <p className="text-lg text-white/90 mb-10 font-medium max-w-xl mx-auto">
-                  Join the next generation of restaurants running on SmartServe. Get started today.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/faq#contact"
-                    className="px-8 py-3.5 rounded-full bg-white text-brand-base font-extrabold text-base hover:bg-brand-tint-bg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
-                  >
-                    Book a Demo <ArrowRight size={20} />
-                  </Link>
-                  <Link
-                    href="/about"
-                    className="px-8 py-3.5 rounded-full bg-black/20 text-white font-bold text-base hover:bg-black/30 border border-white/20 transition-all backdrop-blur-md flex items-center justify-center"
-                  >
-                    Learn More
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <BentoGrid />
+        <FrontOfHouse />
+        <BackOfHouse />
+        <PartnerMarquee />
+        <CtaSection />
 
       </main>
       <Footer />
