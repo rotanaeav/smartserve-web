@@ -47,10 +47,10 @@ export const missionFeatures = [
 ];
 
 export const team = [
-  { name: "Piseth", role: "Co-Founder & CEO", img: "/founder_img/Piseth.jpg" },
-  { name: "RTN", role: "Co-Founder & CTO", img: "/founder_img/RTN.jpg" },
-  { name: "TR", role: "Lead Developer", img: "/founder_img/TR.png" },
-  { name: "WN", role: "UI/UX Designer", img: "/founder_img/WN.png" },
-  { name: "SIM SOL", role: "Co-Founder" },
-  { name: "LIN POWIN", role: "Co-Founder" }
+  { name: "Eav Rotana", role: "Team Lead & Project Manager", img: "/founder_img/RTN.jpg" },
+  { name: "Mao Piseth", role: "Team Sub Lead & Product Owner (PO)", img: "/founder_img/Piseth.jpg" },
+  { name: "Yin Wattana", role: "Backend Developer", img: "/founder_img/WN.png" },
+  { name: "Saroeun Sothearith", role: "Tester", img: "/founder_img/TR.png" },
+  { name: "Lin Powin", role: "Tester" },
+  { name: "Sim Sol", role: "Dual Module" }
 ];
