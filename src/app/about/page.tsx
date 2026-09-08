@@ -16,7 +16,7 @@ export default function AboutPage() {
 
   const stats = [
     { value: "1", label: "Restaurant Served", sub: "Our very first partner!" },
-    { value: "1M+", label: "Orders Processed", sub: "Every single month" },
+    { value: "100+", label: "Orders Processed", sub: "Every single month" },
     { value: "99.9%", label: "Platform Uptime", sub: "SLA guaranteed" },
     { value: "48h", label: "Onboarding Time", sub: "From signup to live" },
   ];
@@ -112,20 +112,18 @@ export default function AboutPage() {
         {/* ── MISSION ── */}
         <section className="py-24 bg-[#FAF6F2]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-stretch gap-16">
-
-              {/* Left */}
-              <motion.div {...fadeIn} className="flex-1 flex flex-col justify-center">
-                <span className="inline-block px-3 py-1 rounded-full bg-brand-tint-bg text-brand-base font-bold text-xs tracking-wider uppercase mb-5 self-start">Our Mission</span>
-                <h2 className="text-3xl lg:text-4xl font-extrabold text-brand-base mb-5 leading-tight">
-                  Built by restaurant people,<br />for restaurant people.
+            <div className="flex flex-col items-center text-center">
+              <motion.div {...fadeIn} className="max-w-2xl flex flex-col items-center">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-5">Our Mission</span>
+                <h2 className="text-3xl lg:text-5xl font-extrabold text-brand-base mb-6 leading-tight">
+                  Built by restaurant people,<br className="hidden sm:block" /> for restaurant people.
                 </h2>
-                <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-md">
+                <p className="text-lg text-gray-600 mb-10 leading-relaxed">
                   We built SmartServe on the floor, during service — because we lived the chaos ourselves. Every feature exists because a real partner needed it during a real rush.
                 </p>
-                <ul className="space-y-3">
-                  {["No forced hardware upgrades", "Khmer & English support", "Free onboarding", "24/7 priority support"].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-700 font-medium text-sm">
+                <ul className="flex flex-wrap justify-center gap-4">
+                  {["No forced hardware", "Khmer & English", "Free onboarding", "24/7 priority support"].map((item, i) => (
+                    <li key={i} className="flex items-center gap-2 text-gray-700 font-medium text-sm bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
                       <div className="w-5 h-5 rounded-full bg-brand-base flex items-center justify-center shrink-0">
                         <CheckCircle2 size={12} className="text-white" />
                       </div>
@@ -134,19 +132,6 @@ export default function AboutPage() {
                   ))}
                 </ul>
               </motion.div>
-
-              {/* Right */}
-              <motion.div {...fadeIn} className="flex-1 relative min-h-[300px]">
-                <div className="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
-                  <img src="/hero-bg2.jpg" alt="Restaurant" className="w-full h-full object-cover opacity-70" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-brand-base/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6">
-                    <p className="text-white font-bold text-lg leading-tight">"Built on the floor,<br/>during service."</p>
-                    <p className="text-white/50 text-xs mt-1">— The SmartServe Team</p>
-                  </div>
-                </div>
-              </motion.div>
-
             </div>
           </div>
         </section>
@@ -155,7 +140,7 @@ export default function AboutPage() {
         <section className="py-32 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-sm tracking-wider uppercase mb-4">The People</span>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">The People</span>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">Meet the Team</h2>
               <p className="text-gray-500 mt-4 text-lg">A small but mighty team that built a full platform in just 3 months.</p>
             </motion.div>
@@ -208,7 +193,7 @@ export default function AboutPage() {
         <section className="pt-20 pb-12 bg-[#FAF6F2]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-16">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-sm tracking-wider uppercase mb-4">What Drives Us</span>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">What Drives Us</span>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">Our Core Values</h2>
             </motion.div>
 
@@ -237,7 +222,7 @@ export default function AboutPage() {
         <section className="py-32 bg-[#FAF6F2]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div {...fadeIn} className="text-center mb-20">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-sm tracking-wider uppercase mb-4">How We Got Here</span>
+              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-sm tracking-wider uppercase mb-4">How We Got Here</span>
               <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900">Our Journey</h2>
             </motion.div>
 
@@ -294,13 +279,13 @@ export default function AboutPage() {
             <motion.div {...fadeIn} className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/faq#contact"
-                className="px-10 py-4 rounded-full bg-white text-brand-base font-extrabold text-lg hover:bg-gray-50 hover:-translate-y-1 transition-all shadow-xl flex items-center justify-center gap-2"
+                className="px-8 py-3.5 rounded-full bg-white text-brand-base font-extrabold text-base hover:bg-gray-50 hover:-translate-y-1 transition-all shadow-xl flex items-center justify-center gap-2"
               >
                 Get in Touch <ArrowRight size={20} />
               </Link>
               <Link
                 href="/"
-                className="px-10 py-4 rounded-full bg-white/10 backdrop-blur-md text-white font-bold text-lg hover:bg-white/20 border border-white/20 transition-all flex items-center justify-center"
+                className="px-8 py-3.5 rounded-full bg-white/10 backdrop-blur-md text-white font-bold text-base hover:bg-white/20 border border-white/20 transition-all flex items-center justify-center"
               >
                 See the Platform
               </Link>

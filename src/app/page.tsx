@@ -280,11 +280,10 @@ export default function Home() {
               <button
                 key={i}
                 onClick={() => setCurrentSlide(i)}
-                className={`transition-all duration-300 rounded-full ${
-                  i === currentSlide
-                    ? "w-8 h-2.5 bg-white"
-                    : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
-                }`}
+                className={`transition-all duration-300 rounded-full ${i === currentSlide
+                  ? "w-8 h-2.5 bg-white"
+                  : "w-2.5 h-2.5 bg-white/40 hover:bg-white/70"
+                  }`}
               />
             ))}
           </div>
@@ -293,10 +292,10 @@ export default function Home() {
         {/* ── BENTO GRID FEATURES ── */}
         <section id="features" className="py-24 lg:py-32 bg-gray-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div {...fadeIn} className="max-w-2xl mb-16">
-              <h2 className="text-brand-secondary font-bold tracking-widest uppercase text-sm mb-3">Platform</h2>
-              <h3 className="text-4xl md:text-5xl font-extrabold text-brand-base leading-tight">
-                Everything you need to <br className="hidden md:block" /> run the house.
+            <motion.div {...fadeIn} className="max-w-2xl mb-8">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-5 border border-orange-200 shadow-sm">Platform</span>
+              <h3 className="text-4xl md:text-4xl font-extrabold text-brand-base leading-tight">
+                Everything you need to <br className="hidden md:block" /> run the house
               </h3>
             </motion.div>
 
@@ -335,71 +334,140 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ── SPLIT SERVICES SECTION ── */}
-        <section className="py-24 bg-brand-background overflow-hidden">
+        {/* ── FRONT OF HOUSE SECTION ── */}
+        <section className="py-28 lg:py-32 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             {/* Front of House */}
-            <div className="flex flex-col lg:flex-row items-center gap-16 mb-32">
+            <div className="flex flex-col lg:flex-row items-center gap-16">
               <motion.div {...fadeIn} className="flex-1 lg:pr-8">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-xs tracking-widest uppercase mb-6 border border-brand-tint-border">Front of House</span>
-                <h2 className="text-3xl lg:text-5xl font-extrabold text-brand-base mb-6 leading-[1.1]">Run your front of house like clockwork</h2>
-                <p className="text-lg text-gray-800 mb-8 leading-relaxed font-medium">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-xs tracking-widest uppercase mb-6 border border-orange-200 shadow-sm">Front of House</span>
+                <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
+                  Run your front of house like clockwork
+                </h2>
+                <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
                   Deliver a flawless guest experience with intuitive tools designed for hospitality professionals.
                 </p>
 
-                <div className="space-y-8 mt-10">
+                <div className="space-y-4">
                   {[
                     { title: "Floor map reservations", desc: "Guests see a real-time visualization of your restaurant." },
                     { title: "QR self-ordering", desc: "No apps, no downloads. Just scan and order in seconds." },
                     { title: "Live table tracking", desc: "Always know the status of every table from a single screen." }
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-5 items-start">
-                      <div className="w-10 h-10 rounded-full bg-brand-secondary text-white flex items-center justify-center shrink-0 mt-1 shadow-md"><CheckCircle2 size={20} /></div>
+                    <div
+                      key={i}
+                      className="flex gap-4 items-start group cursor-default"
+                    >
+                      <div className="text-[#8A4A1C] shrink-0 mt-[3px] relative">
+                        <div className="absolute inset-0 bg-[#8A4A1C]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <CheckCircle2 size={20} className="relative z-10 group-hover:scale-110 transition-transform duration-500 ease-out" />
+                      </div>
                       <div>
-                        <h4 className="font-extrabold text-brand-base text-xl mb-1">{item.title}</h4>
-                        <p className="text-gray-800 text-lg">{item.desc}</p>
+                        <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#8A4A1C] transition-colors duration-300">{item.title}</h4>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
                 </div>
               </motion.div>
 
-              <motion.div {...fadeIn} className="flex-1 w-full relative">
-                <div className="relative aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white group">
-                  <img src="https://images.unsplash.com/photo-1414235077428-33898f82d7c1?q=80&w=1200&auto=format&fit=crop" alt="Fine dining" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-brand-base/20 mix-blend-overlay" />
+              <motion.div {...fadeIn} className="flex-1 w-full max-w-[520px] mx-auto relative h-[360px] lg:mt-16">
+                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl group border border-[#8A4A1C]/30">
+                  <img src="/front-house.png" alt="Luxury restaurant interior" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                 </div>
+
+                {/* Floating Payment Card */}
+                <motion.div
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                  className="absolute -bottom-4 lg:-bottom-6 -left-2 lg:-left-6 bg-white/95 backdrop-blur-md border border-white/60 rounded-2xl p-3.5 pr-6 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+                >
+                  <div className="flex items-center gap-3.5">
+                    <div className="w-10 h-10 rounded-full bg-[#E8F5E9] flex items-center justify-center border border-[#C8E6C9]">
+                      <Zap className="text-[#2E7D32]" size={18} />
+                    </div>
+                    <div>
+                      <p className="text-gray-500 text-[10px] font-bold uppercase tracking-wider mb-0.5">Table 12 • Paid</p>
+                      <p className="text-[#3E2B20] font-black text-base">$142.50 Received</p>
+                    </div>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
+          </div>
+        </section>
 
-            {/* Back of House */}
+        {/* ── BACK OF HOUSE SECTION ── */}
+        <section className="py-28 lg:py-32 bg-[#FAFAFA] overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col-reverse lg:flex-row items-center gap-16">
-              <motion.div {...fadeIn} className="flex-1 w-full relative">
-                <div className="relative aspect-square md:aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white group">
-                  <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?q=80&w=1200&auto=format&fit=crop" alt="Kitchen display" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-[#E08600]/20 mix-blend-overlay" />
+              <motion.div {...fadeIn} className="flex-1 w-full max-w-[520px] mx-auto relative h-[360px] lg:mt-16">
+                <div className="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-2xl group border border-[#8A4A1C]/30">
+                  <img src="/back-house.jpg" alt="Professional kitchen" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2A1D16]/80 via-transparent to-transparent" />
+                </div>
+
+                {/* Floating Kitchen Alerts */}
+                <div className="absolute top-8 -right-2 lg:-right-6 flex flex-col gap-3">
+                  <motion.div
+                    initial={{ x: 50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-blue-500 ml-1" />
+                    <span className="font-bold text-[#3E2B20] text-sm">Burger • Accepted</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: 50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-yellow-500 animate-ping ml-1" />
+                    <span className="font-bold text-[#3E2B20] text-sm">Steak • Preparing</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ x: 50, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className="bg-white/90 backdrop-blur-md rounded-xl p-3 pr-5 shadow-xl flex items-center gap-3 border border-white/50"
+                  >
+                    <div className="w-2 h-2 rounded-full bg-green-500 ml-1" />
+                    <span className="font-bold text-[#3E2B20] text-sm">Salmon • Served</span>
+                  </motion.div>
                 </div>
               </motion.div>
 
               <motion.div {...fadeIn} className="flex-1 lg:pl-8">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-xs tracking-widest uppercase mb-6 border border-brand-tint-border">Back of House</span>
-                <h2 className="text-3xl lg:text-5xl font-extrabold text-brand-base mb-6 leading-[1.1]">Keep your kitchen in perfect sync</h2>
-                <p className="text-lg text-gray-800 mb-8 leading-relaxed font-medium">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-[#E08600]/10 text-[#E08600] font-bold text-xs tracking-widest uppercase mb-6 border border-[#E08600]/20 shadow-sm">Back of House</span>
+                <h2 className="text-4xl md:text-4xl font-extrabold leading-tight text-[#3E2B20] pb-4">
+                  Keep your kitchen in perfect sync
+                </h2>
+                <p className="text-lg text-gray-600 mb-10 leading-relaxed font-medium">
                   Keep your kitchen firing on all cylinders with tools that eliminate miscommunication and reduce wait times.
                 </p>
 
-                <div className="space-y-8 mt-10">
+                <div className="space-y-4">
                   {[
                     { title: "Digital KDS", desc: "Priority color-coding and automatic station routing." },
                     { title: "Ticket time tracking", desc: "Get alerts before orders exceed their target time." },
                     { title: "Real-time sync", desc: "Waitstaff see exactly when a dish is ready to be run." }
                   ].map((item, i) => (
-                    <div key={i} className="flex gap-5 items-start">
-                      <div className="w-10 h-10 rounded-full bg-brand-base text-white flex items-center justify-center shrink-0 mt-1 shadow-md"><Zap size={20} /></div>
+                    <div
+                      key={i}
+                      className="flex gap-4 items-start group cursor-default"
+                    >
+                      <div className="text-[#3E2B20] shrink-0 mt-[3px] relative">
+                        <div className="absolute inset-0 bg-[#E08600]/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <UtensilsCrossed size={20} className="relative z-10 group-hover:scale-110 group-hover:text-[#E08600] transition-all duration-500 ease-out" />
+                      </div>
                       <div>
-                        <h4 className="font-extrabold text-brand-base text-xl mb-1">{item.title}</h4>
-                        <p className="text-gray-800 text-lg">{item.desc}</p>
+                        <h4 className="font-extrabold text-[#3E2B20] text-xl mb-1.5 group-hover:text-[#E08600] transition-colors duration-300">{item.title}</h4>
+                        <p className="text-gray-600 text-base leading-relaxed">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -411,18 +479,18 @@ export default function Home() {
         </section>
 
         {/* ── LOGO MARQUEE ── */}
-        <section className="py-32 bg-gray-50 overflow-hidden">
+        <section className="py-32 bg-[#FFF9F2] overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div {...fadeIn} className="text-center max-w-2xl mx-auto mb-14">
-              <span className="inline-block px-4 py-1 rounded-full bg-brand-tint-bg text-brand-base font-bold text-sm tracking-wider uppercase mb-4">What Our Partners Say</span>
-              <h2 className="text-4xl font-extrabold text-gray-700">Trusted by restaurants that care.</h2>
+              <span className="inline-block px-4 py-1 rounded-full bg-orange-100 text-[#8A4A1C] font-bold text-sm tracking-wider uppercase mb-4 shadow-sm border border-orange-200">What Our Partners Say</span>
+              <h2 className="text-4xl font-extrabold text-[#3E2B20]">Trusted by restaurants that care.</h2>
             </motion.div>
 
             {/* Partner Logos */}
             <div className="relative mt-8">
               {/* Fade edges */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FFF9F2] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FFF9F2] to-transparent z-10 pointer-events-none" />
 
               <div className="flex overflow-hidden">
                 <div className="flex gap-24 items-center whitespace-nowrap animate-marquee">
@@ -456,7 +524,7 @@ export default function Home() {
               <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#E08600] rounded-full blur-[100px] opacity-40" />
 
               <div className="relative z-10 max-w-3xl mx-auto">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">
                   Ready to upgrade your service?
                 </h2>
                 <p className="text-lg text-white/90 mb-10 font-medium max-w-xl mx-auto">
@@ -465,13 +533,13 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     href="/faq#contact"
-                    className="px-10 py-5 rounded-full bg-white text-brand-base font-extrabold text-lg hover:bg-brand-tint-bg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
+                    className="px-8 py-3.5 rounded-full bg-white text-brand-base font-extrabold text-base hover:bg-brand-tint-bg transition-transform hover:scale-105 shadow-xl flex items-center justify-center gap-2"
                   >
                     Book a Demo <ArrowRight size={20} />
                   </Link>
                   <Link
                     href="/about"
-                    className="px-10 py-5 rounded-full bg-black/20 text-white font-bold text-lg hover:bg-black/30 border border-white/20 transition-all backdrop-blur-md flex items-center justify-center"
+                    className="px-8 py-3.5 rounded-full bg-black/20 text-white font-bold text-base hover:bg-black/30 border border-white/20 transition-all backdrop-blur-md flex items-center justify-center"
                   >
                     Learn More
                   </Link>

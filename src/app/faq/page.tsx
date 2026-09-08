@@ -176,7 +176,7 @@ export default function FAQPage() {
         <section id="contact" className="py-24 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div {...fadeIn} className="text-center mb-14">
-              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold text-xs tracking-wider uppercase mb-4">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-brand-tint-bg text-brand-base font-bold border border-[#8A4A1C]/20 shadow-sm text-xs tracking-wider uppercase mb-4">
                 Get In Touch
               </span>
               <h2 className="text-4xl font-extrabold text-gray-900 mb-3">Still have questions?</h2>
